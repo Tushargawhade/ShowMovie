@@ -5,13 +5,12 @@ import Home from './components/Home'
 
 const App = () => {
   return (
-    <div className='w-screeen h-screen bg-[#]'>
+    <div className='w-screeen h-screen bg-[#1F1E24] flex'>
 
 
       <Routes>
+
         <Route path='/' element={<Home/>} />
-
-
 
       </Routes>
 
