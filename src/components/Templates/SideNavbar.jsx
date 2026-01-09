@@ -41,7 +41,7 @@ const SideNavbar = () => {
 
         </nav>
 
-        <hr className='border-none h-[1px] bg-zinc-400' />
+        <hr className='border-t-2 bg-zinc-400' />
 
         <nav className='flex flex-col gap-2 text-zinc-400'>
 
