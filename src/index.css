@@ -2,8 +2,25 @@
 
 
 
+::-webkit-scrollbar{
+
+    width: 7px;
+    height: 7px;
+
+}
 
 
+::-webkit-scrollbar-thumb{
+    background-color: #17171a ;
+    border-radius: 10px;
+}
+
+
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #6556CD ;
+    border-radius: 10px;
+}
 
 
 
