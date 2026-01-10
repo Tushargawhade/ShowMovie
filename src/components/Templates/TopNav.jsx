@@ -12,10 +12,12 @@ const TopNav = () => {
   const GetSearches = async () => {
     try {
       const { data } = await axios.get(`/search/multi?query=${query}`);
-      console.log(data.results);
+    //   console.log(data.results);
 
       setsearches(data.results);
-    } catch (error) {
+
+    } 
+    catch (error) {
       console.log("Error : ", error);
     }
   };
@@ -33,7 +35,7 @@ const TopNav = () => {
           setquery(e.target.value);
         }}
         value={query}
-        className="w-[40%] mx-8 p-2 text-zinc-200 outline-none border-none bg-transparent"
+        className="w-[45%] mx-8 p-2 text-zinc-200 outline-none border-none bg-transparent"
         type="text"
         placeholder="search anything"
       />
@@ -47,7 +49,7 @@ const TopNav = () => {
         ></i>
       )}
 
-      <div className="absolute w-[50%] max-h-[50vh] bg-zinc-100 top-[90%] overflow-auto rounded-sm ">
+      <div className="absolute w-[50%] max-h-[55vh] bg-zinc-100 top-[99%]  left-[5%] overflow-auto rounded-sm ">
         {searches.map((s, i) => (
           <Link
             key={i}
