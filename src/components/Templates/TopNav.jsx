@@ -27,7 +27,7 @@ const TopNav = () => {
   }, [query]);
 
   return (
-    <div className="w-full h-[10vh] relative flex justify-start items-center  ml-[15%]">
+    <div className="w-[80%] h-[10vh] relative flex items-center mx-auto">
       <i className="ri-search-line text-zinc-400 text-3xl "></i>
 
       <input
@@ -35,7 +35,7 @@ const TopNav = () => {
           setquery(e.target.value);
         }}
         value={query}
-        className="w-[45%] mx-8 p-2 text-zinc-200 outline-none border-none bg-transparent"
+        className="w-[45%] mx-8 p-2 text-zinc-200 outline-none border-none "
         type="text"
         placeholder="search anything"
       />
@@ -45,7 +45,7 @@ const TopNav = () => {
           onClick={() => {
             setquery("");
           }}
-          className="ri-close-line  text-zinc-400 text-3xl"
+          className=" ri-close-line  text-zinc-400 text-3xl  right-0"
         ></i>
       )}
 
@@ -53,7 +53,7 @@ const TopNav = () => {
         {searches.map((s, i) => (
           <Link
             key={i}
-            className=" hover:text-black hover:bg-zinc-300 duration:400  w-full font-semibold text-zinc-700 p-8 justify-start items-center  border-b-2 border-zinc-100 flex shadow-lg"
+            className=" hover:text-black hover:bg-zinc-300 duration:400  w-full font-semibold text-zinc-700 p-4 justify-start items-center  border-b-2 border-zinc-100 flex shadow-lg"
           >
             <img
               className="w-[10vh] h-[10vh] object-cover mr-5 rounded"
