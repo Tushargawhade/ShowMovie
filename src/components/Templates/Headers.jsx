@@ -8,7 +8,7 @@ const Headers = ({data}) => {
     return (
 
         <div 
-            className=' w-full h-[55vh] flex flex-col justify-end items-start p-[4%]'
+            className=' w-full h-[50vh] flex flex-col justify-end items-start p-[4%]'
             style={{
                 background : `linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(https://image.tmdb.org/t/p/original${ data. backdrop_path || data.profile_path})`,
                 backgroundPosition : 'top 30%',
