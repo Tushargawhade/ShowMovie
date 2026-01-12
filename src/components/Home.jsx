@@ -3,17 +3,18 @@ import SideNavbar from "./Templates/SideNavbar";
 import TopNav from "./Templates/TopNav";
 import axios from "../utils/axios";
 import Headers from "./Templates/Headers";
+import HorizontalCards from './Templates/HorizontalCards'
 
 
 const Home = () => {
   document.title = "ShowMovie | Homepage";
 
    const [wallpaper, setwallpaper] = useState(null);
+   const [trending, settrending] = useState(null);
 
    const GetHeaderWallpaper = async ()=>{
 
     try{
-
       const { data } = await axios.get('trending/all/day');
       // console.log(data.results);
 
@@ -31,18 +32,40 @@ const Home = () => {
    }
 
 
+   const GetTrending = async ()=>{
+
+    try{
+      const { data } = await axios.get('trending/all/day');
+      // console.log(data.results);
+      
+      settrending(data.results);
+
+
+    }
+    catch(error){
+
+      console.log("Error :", error); 
+    }
+
+   }
+
+   console.log(trending);
+
   useEffect(()=>{
     !wallpaper && GetHeaderWallpaper();
+    !trending && GetTrending();
+
   },[])
 
 
-
-  return wallpaper ? (
+  
+  return wallpaper && trending ? (
     <>
       <SideNavbar />
-      <div className="w-[80%] h-full ">
+      <div className="w-[80%] h-full overflow-auto overflow-x-hidden ">
         <TopNav />
         <Headers data={wallpaper} />
+        <HorizontalCards data={trending}/>
 
       </div>
     </>
