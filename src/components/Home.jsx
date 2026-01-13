@@ -40,8 +40,6 @@ const Home = () => {
     }
   };
 
-  console.log(trending);
-
   useEffect(() => {
     GetTrending();
     !wallpaper && GetHeaderWallpaper();
@@ -55,7 +53,9 @@ const Home = () => {
         <Headers data={wallpaper} />
 
         <div className="flex justify-between p-3">
-          <h1 className="text-2xl font-semibold text-zinc-400 pt-3">Trending</h1>
+          <h1 className="text-2xl font-semibold text-zinc-400 pt-3">
+            Trending
+          </h1>
 
           <Dropdown
             title="Filter"
@@ -68,7 +68,7 @@ const Home = () => {
       </div>
     </>
   ) : (
-    <Loading/>
+    <Loading />
   );
 };
 
