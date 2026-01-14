@@ -5,6 +5,7 @@ import Dropdown from "./Templates/Dropdown";
 import axios from "../utils/axios";
 import Cards from "./Templates/Cards";
 import Loading from "./Loading";
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 function Trending() {
@@ -13,28 +14,57 @@ function Trending() {
   const [category, setcategory] = useState("all");
   const [duration, setduration] = useState("day");
   const [trending, settrending] = useState([]);
+  const [page, setpage] = useState(1);
+  const [hasMore, sethasMore] = useState(true);
 
   const GetTrending = async () => {
     try {
-      const { data } = await axios.get(`trending/${category}/${duration}`);
+      const { data } = await axios.get(`trending/${category}/${duration}?page=${page}`);
       // console.log(data.results);
+      // settrending(data.results);
 
-      settrending(data.results);
+
+      if(data.results.length > 0){
+
+          settrending((prev)=>[...prev,...data.results])
+          setpage(page+1);
+      }
+      else{
+        sethasMore(false);
+      }
+
+
     } catch (error) {
       console.log("Error :", error);
     }
   };
 
+
+  const regreshHandler = ()=>{
+    if(trending.length === 0 ){
+      GetTrending();
+    }
+    else{
+      setpage(1);
+      settrending([]);
+      GetTrending();
+    }
+  }
+
+
+
+
+
   useEffect(()=>{
-    GetTrending();
+    regreshHandler();
   },[category,duration])
 
 
-  console.log(trending)
+//   console.log(trending)
 
-  return trending ? (
-    <div className="w-screen h-screen p-[2%] overflow-hidden overflow-y-auto ">
-      <div className="w-full flex items-center justify-between">
+  return trending.length > 0  ? (
+    <div className="w-screen h-screen ">
+      <div className="p-[2%] w-full flex items-center justify-between">
 
         <h1 className="font-semibold text-2xl text-zinc-400">
           <i
@@ -57,7 +87,17 @@ function Trending() {
 
       </div>
 
+
+      <InfiniteScroll
+        dataLength={trending.length}
+        next={GetTrending}
+        hasMore={hasMore}
+        loader = {<h1>loading....</h1>}
+      >
+
         <Cards data={trending} title={category}/>
+
+      </InfiniteScroll>
 
 
     </div>
