@@ -9,29 +9,29 @@ import Cards from './Templates/Cards';
 
 
 
+const Movie = () => {
 
-const Popular = () => {
 
-  document.title = "ShowMovie | Popular";
+  document.title = "ShowMovie | Movies";
 
   const navigate = useNavigate();
-  const [category, setcategory] = useState("movie");
-  const [popular, setpopular] = useState([]);
+  const [category, setcategory] = useState("now_playing");
+  const [movie, setmovie] = useState([]);
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
 
 
 
-  const GetPopular = async () => {
+  const GetMovie = async () => {
     try {
-      const { data } = await axios.get(`${category}/popular?page=${page}`);
+      const { data } = await axios.get(`/movie/${category}?page=${page}`);
       // console.log(data.results);
-      // setpopular(data.results);
+      // setmovie(data.results);
 
 
       if(data.results.length > 0){
 
-          setpopular((prev)=>[...prev,...data.results])
+          setmovie((prev)=>[...prev,...data.results])
           setpage(page+1);
       }
       else{
@@ -46,13 +46,13 @@ const Popular = () => {
 
 
   const regreshHandler = ()=>{
-    if(popular.length === 0 ){
-      GetPopular();
+    if(movie.length === 0 ){
+      GetMovie();
     }
     else{
       setpage(1);
-      setpopular([]);
-      GetPopular();
+      setmovie([]);
+      GetMovie();
     }
   }
 
@@ -66,8 +66,7 @@ const Popular = () => {
 
 
 
-
-  return popular.length > 0  ? (
+  return movie.length > 0  ? (
     <div className="w-screen h-screen ">
       <div className="p-[2%] w-full flex items-center justify-between">
 
@@ -76,13 +75,13 @@ const Popular = () => {
             onClick={() => navigate(-1)}
             className="ri-arrow-left-long-line mr-2 text-zinc-500  hover:text-[#6556CD]"
           ></i>
-          Popular
+          Movies <small className='text-sm ml-1 text-zinc-600'>({category})</small>
         </h1>
 
         <div className="flex items-center w-[80%]">
           <TopNav />
 
-          <Dropdown title="Category" options={["tv", "movie"]} func={(e)=>setcategory(e.target.value)}/>
+          <Dropdown title="Category" options={["popular", "top_rated","upcoming","now_playing"]} func={(e)=>setcategory(e.target.value)}/>
           <div className="w-[2%]"></div>
         </div>
 
@@ -91,13 +90,13 @@ const Popular = () => {
 
 
       <InfiniteScroll
-        dataLength={popular.length}
-        next={GetPopular}
+        dataLength={movie.length}
+        next={GetMovie}
         hasMore={hasMore}
         loader = {<h1 className="bg-[#1F1E24]">loading....</h1>}
       >
 
-        <Cards data={popular} title={category}/>
+        <Cards data={movie} title={category}/>
 
       </InfiniteScroll>
 
@@ -108,4 +107,4 @@ const Popular = () => {
  )
 }
 
-export default Popular;
+export default Movie;

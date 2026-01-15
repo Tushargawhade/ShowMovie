@@ -22,7 +22,7 @@ const SideNavbar = () => {
           <i className="ri-sparkling-2-fill mr-2"></i> Popular
         </Link>
 
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
+        <Link to="/movie" className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
           <i className="ri-movie-2-ai-fill mr-2"></i> Movies
         </Link>
 
