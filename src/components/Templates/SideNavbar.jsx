@@ -14,19 +14,31 @@ const SideNavbar = () => {
           New Feeds
         </h1>
 
-        <Link to="/trending" className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
+        <Link
+          to="/trending"
+          className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4"
+        >
           <i className="ri-fire-fill mr-2"></i> Trending
         </Link>
 
-        <Link to="/popular"  className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
+        <Link
+          to="/popular"
+          className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4"
+        >
           <i className="ri-sparkling-2-fill mr-2"></i> Popular
         </Link>
 
-        <Link to="/movie" className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
+        <Link
+          to="/movie"
+          className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4"
+        >
           <i className="ri-movie-2-ai-fill mr-2"></i> Movies
         </Link>
 
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
+        <Link
+          to="/tv"
+          className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4"
+        >
           <i className="ri-tv-2-fill mr-2"></i> TV Shows
         </Link>
 
@@ -43,7 +55,7 @@ const SideNavbar = () => {
         </h1>
 
         <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
-          <i class="ri-information-2-fill mr-2"></i> About Us
+          <i className="ri-information-2-fill mr-2"></i> About Us
         </Link>
 
         <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
