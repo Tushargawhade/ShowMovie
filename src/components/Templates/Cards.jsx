@@ -10,7 +10,7 @@ function Cards({data , title}) {
 
             <Link key={i} className='w-[28vh] mr-[6%] mb-[5%]'>
 
-                <img className='shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[42vh] object-cover' src={`https://image.tmdb.org/t/p/original${ c.poste_path || c.backdrop_path}`} alt="" />
+                <img className='shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[42vh] object-cover' src={`https://image.tmdb.org/t/p/original${ c.poster_path || c.backdrop_path}`} alt="" />
 
 
 
