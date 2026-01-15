@@ -43,11 +43,11 @@ const SideNavbar = () => {
         </h1>
 
         <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
-          <i className="ri-phone-fill"></i> About Us
+          <i class="ri-information-2-fill mr-2"></i> About Us
         </Link>
 
         <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
-          <i className="ri-phone-fill"></i> Contact SCSDB
+          <i className="ri-phone-fill mr-2"></i> Contact SCSDB
         </Link>
       </nav>
     </div>
