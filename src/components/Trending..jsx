@@ -9,8 +9,9 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 function Trending() {
+    document.title = "ShowMovie | Trending";
+  
   const navigate = useNavigate();
-
   const [category, setcategory] = useState("all");
   const [duration, setduration] = useState("day");
   const [trending, settrending] = useState([]);
@@ -92,7 +93,7 @@ function Trending() {
         dataLength={trending.length}
         next={GetTrending}
         hasMore={hasMore}
-        loader = {<h1>loading....</h1>}
+        loader = {<h1 className="bg-[#1F1E24]">loading....</h1>}
       >
 
         <Cards data={trending} title={category}/>
