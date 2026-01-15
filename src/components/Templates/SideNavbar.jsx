@@ -42,7 +42,7 @@ const SideNavbar = () => {
           <i className="ri-tv-2-fill mr-2"></i> TV Shows
         </Link>
 
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
+        <Link to="/people" className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
           <i className="ri-team-fill mr-2"></i> People
         </Link>
       </nav>
