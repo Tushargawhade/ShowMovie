@@ -8,30 +8,30 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Cards from './Templates/Cards';
 
 
+const Tvshows = () => {
 
-const Movie = () => {
 
 
-  document.title = "ShowMovie | Movies";
+  document.title = "ShowMovie | Tv Shows";
 
   const navigate = useNavigate();
-  const [category, setcategory] = useState("now_playing");
-  const [movie, setmovie] = useState([]);
+  const [category, setcategory] = useState("airing_today");
+  const [tv, settv] = useState([]);
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
 
 
 
-  const GetMovie = async () => {
-    try {
-      const { data } = await axios.get(`/movie/${category}?page=${page}`);
+  const GetTv = async () => {
+    try { 
+      const { data } = await axios.get(`/tv/${category}?page=${page}`);
       // console.log(data.results);
-      // setmovie(data.results);
+      // settv(data.results);
 
 
       if(data.results.length > 0){
 
-          setmovie((prev)=>[...prev,...data.results])
+          settv((prev)=>[...prev,...data.results])
           setpage(page+1);
       }
       else{
@@ -46,13 +46,13 @@ const Movie = () => {
 
 
   const regreshHandler = ()=>{
-    if(movie.length === 0 ){
-      GetMovie();
+    if(tv.length === 0 ){
+      GetTv();
     }
     else{
       setpage(1);
-      setmovie([]);
-      GetMovie();
+      settv([]);
+      GetTv();
     }
   }
 
@@ -66,7 +66,8 @@ const Movie = () => {
 
 
 
-  return movie.length > 0  ? (
+
+  return tv.length > 0  ? (
     <div className="w-screen h-screen ">
       <div className="p-[2%] w-full flex items-center justify-between">
 
@@ -75,13 +76,13 @@ const Movie = () => {
             onClick={() => navigate(-1)}
             className="ri-arrow-left-long-line mr-2 text-zinc-500  hover:text-[#6556CD]"
           ></i>
-          Movies <small className='text-sm ml-1 text-zinc-600'>({category})</small>
+         TV Shows <small className='text-sm ml-1 text-zinc-600'>({category})</small>
         </h1>
 
         <div className="flex items-center w-[80%]">
           <TopNav />
 
-          <Dropdown title="Category" options={["popular", "top_rated","upcoming","now_playing"]} func={(e)=>setcategory(e.target.value)}/>
+          <Dropdown title="Category" options={["on_the_air", "popular","top_rated","airing_today"]} func={(e)=>setcategory(e.target.value)}/>
           <div className="w-[2%]"></div>
         </div>
 
@@ -90,13 +91,13 @@ const Movie = () => {
 
 
       <InfiniteScroll
-        dataLength={movie.length}
-        next={GetMovie}
+        dataLength={tv.length}
+        next={GetTv}
         hasMore={hasMore}
         loader = {<h1 className="bg-[#1F1E24]">loading....</h1>}
       >
 
-        <Cards data={movie} title={category}/>
+        <Cards data={tv} title={category}/>
 
       </InfiniteScroll>
 
@@ -105,6 +106,11 @@ const Movie = () => {
   ) : (   
     <Loading/>
  )
+
+
+
+
+
 }
 
-export default Movie;
+export default Tvshows
