@@ -6,7 +6,7 @@ import Dropdown from './Dropdown'
 
 const HorizontalCards = ({data}) => {
 
-  console.log(data)
+  // console.log(data)
 
   return (
         
