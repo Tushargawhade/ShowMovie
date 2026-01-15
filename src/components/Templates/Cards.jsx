@@ -10,13 +10,13 @@ function Cards({data , title}) {
 
             <Link key={i} className='w-[28vh] mr-[6%] mb-[5%]'>
 
-                <img className='shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[42vh] object-cover' src={`https://image.tmdb.org/t/p/original${ c.poster_path || c.backdrop_path}`} alt="" />
+                <img className='shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[42vh] object-cover' src={`https://image.tmdb.org/t/p/original${ c.poster_path || c.backdrop_path || c.profile_path}`} alt="" />
 
 
 
                 <h1 className='text-zinc-300 font-semibold  text-xl mt-2 '>
 
-                {c.original_title || c.title || c.original_name || c.name}
+                {c.nam || c.original_title || c.title || c.original_name || e}
                     
                 </h1>
 
