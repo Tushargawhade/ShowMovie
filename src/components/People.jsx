@@ -39,7 +39,7 @@ const People = () => {
     }
   };
 
-  console.log(person);
+  // console.log(person);
 
   const regreshHandler = ()=>{
     if(person.length === 0 ){
