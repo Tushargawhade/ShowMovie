@@ -21,9 +21,6 @@ const App = () => {
         <Route path="/people" element={<People />} />
 
 
-
-
-        
       </Routes>
     </div>
   );
