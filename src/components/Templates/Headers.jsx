@@ -26,9 +26,9 @@ const Headers = ({ data }) => {
       </p>
 
       <p className="text-zinc-100 mt-2">
-        <i className="ri-calendar-schedule-fill text-yellow-500"></i>{" "}
+        <i className="ri-calendar-schedule-fill text-yellow-500 "></i>{" "}
         {data.release_date || "comming soon..."}
-        <i className="ml-4 ri-album-fill text-yellow-500"></i>
+        <i className="ml-4 ri-album-fill text-yellow-500 mr-1"></i>
         {data.media_type.toUpperCase()}
       </p>
 
