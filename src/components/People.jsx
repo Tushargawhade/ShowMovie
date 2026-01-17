@@ -9,7 +9,7 @@ import Cards from './Templates/Cards';
 
 const People = () => {
 
-  document.title = "ShowMovie | People";
+  document.title = "ShowMovie | Person";
 
   const navigate = useNavigate();
   const [category, setcategory] = useState("popular");
