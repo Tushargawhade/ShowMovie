@@ -22,7 +22,7 @@ const Headers = ({ data }) => {
 
       <p className="w-[75%] text-white font-semibold mt-2">
         {data.overview.slice(0, 200)}...{" "}
-        <Link className="text-blue-400">more</Link>
+        <Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400">more</Link>
       </p>
 
       <p className="text-zinc-100 mt-2">
