@@ -97,7 +97,7 @@ const Tvshows = () => {
         loader = {<h1 className="bg-[#1F1E24]">loading....</h1>}
       >
 
-        <Cards data={tv} title={category}/>
+        <Cards data={tv} title="tv"/>
 
       </InfiniteScroll>
 
