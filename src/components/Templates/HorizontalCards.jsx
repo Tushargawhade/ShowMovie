@@ -14,7 +14,7 @@ const HorizontalCards = ({data}) => {
 
         {data.map((d,i)=> 
           
-            <div key={i} className='min-w-[16%]  mr-5  bg-zinc-900 mb-5'>
+          <Link to={`/${d.media_type}/details/${d.id}`} key={i} className='min-w-[16%]  mr-5  bg-zinc-900 mb-5'>
 
             <img className='w-full h-[45%] object-cover' src={`https://image.tmdb.org/t/p/original${ d.backdrop_path || d.poster_path}`} alt="" />
 
@@ -41,7 +41,7 @@ const HorizontalCards = ({data}) => {
   
 
 
-        </div>
+          </Link>
 
         )}
 

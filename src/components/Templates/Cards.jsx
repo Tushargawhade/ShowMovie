@@ -5,13 +5,14 @@ function Cards({data , title}) {
 
 
 console.log(data);
+
   return (
 
     <div className='flex w-full h-full flex-wrap mt-2 px-[2%] bg-[#1F1E24]'>
 
         {data.map((c,i)=>(
 
-            <Link key={i} className='relative w-[28vh] mr-[6%] mb-[5%]'>
+            <Link to={`/${c.media_type || title}/details/${c.id}`} key={i} className='relative w-[28vh] mr-[6%] mb-[5%]'>
 
                 <img className='shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[42vh] object-cover' src={`https://image.tmdb.org/t/p/original${ c.poster_path || c.backdrop_path || c.profile_path}`} alt="" />
 
