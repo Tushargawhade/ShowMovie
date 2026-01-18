@@ -27,7 +27,7 @@ console.log(data);
                 {c.vote_average && (
 
                     <div className='absolute right-[-10%] bottom-[25%] flex text-lg  font-semibold text-zinc-200 w-[6vh] h-[6vh] bg-yellow-600 justify-center items-center rounded-[50%] '>
-                    {c.vote_average?.toFixed(1) || c.known_for?.[0]?.vote_average?.toFixed(1)} <sup>%</sup>
+                    {(c.vote_average?.toFixed(1) || c.known_for?.[0]?.vote_average?.toFixed(1)) * 10} <sup>%</sup>
                     </div>
                 )
                 }
