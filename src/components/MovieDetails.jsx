@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import { asyncloadmovie, removemovie } from "../store/actions/movieActions";
 import Loading from "./Loading";
 import HorizontalCads from "../components/Templates/HorizontalCards";
@@ -34,7 +34,7 @@ const MovieDetails = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full h-[150vh] px-[10%] "
+      className="relative w-full h-[170vh] px-[10%]  "
     >
       {/*Part 1st poster image  */}
       <nav className="w-full h-[10vh] text-zinc-100 flex gap-10 text-2xl items-center">
@@ -185,6 +185,9 @@ const MovieDetails = () => {
 
 
       <HorizontalCads data={info.recommendations ?  info.recommendations : info.similar}/>
+
+
+      <Outlet />
 
 
 

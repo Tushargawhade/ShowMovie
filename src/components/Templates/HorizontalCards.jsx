@@ -12,7 +12,7 @@ const HorizontalCards = ({data}) => {
         
       <div className='w-full flex overflow-y-hidden mb-3 p-3'>
 
-        {data.map((d,i)=> 
+        {data.length > 0 ? data.map((d,i)=>( 
           
           <Link to={`/${d.media_type}/details/${d.id}`} key={i} className='min-w-[16%] h-[35vh] mr-5  bg-zinc-900 mb-5'>
 
@@ -43,8 +43,8 @@ const HorizontalCards = ({data}) => {
 
           </Link>
 
-        )}
-
+        )): <h1 className='text-3xl font-black mt-5 text-white text-center '>Nothing to Show</h1>
+}  
 
 
 
@@ -52,6 +52,6 @@ const HorizontalCards = ({data}) => {
 
 
   )
-}
+} 
 
 export default HorizontalCards
