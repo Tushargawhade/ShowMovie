@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { asyncloadmovie, removemovie } from "../store/actions/movieActions";
 import Loading from "./Loading";
 import HorizontalCads from "../components/Templates/HorizontalCards";
-
 
 const MovieDetails = () => {
   const { pathname } = useLocation();
@@ -62,8 +67,6 @@ const MovieDetails = () => {
         </a>
       </nav>
 
-
-
       {/*Part 2nd poster ki detail  */}
       <div className="w-full flex">
         <img
@@ -116,23 +119,21 @@ const MovieDetails = () => {
             className="px-3 py-3 text-lg bg-[#6556CD] rounded-lg "
             to={`${pathname}/trailer`}
           >
-            <i class="ri-play-fill text-2xl mr-1"></i>
+            <i className="ri-play-fill text-2xl mr-1"></i>
             Play Trailer
           </Link>
         </div>
       </div>
 
-
-
       {/*Part 3rd available on plateform  */}
       <div className="w-[50%] flex flex-col gap-y-6 mt-8">
-
         {info.watchproviders && info.watchproviders.flatrate && (
           <div className="flex  gap-x-8 items-center text-white">
             <h1>Available on plateform</h1>
 
-            {info.watchproviders.flatrate.map((w) => (
+            {info.watchproviders.flatrate.map((w, i) => (
               <img
+                key={i}
                 title={w.provider_name}
                 className="w-[5vh] h-[5vh] rounded-md object-cover"
                 src={`https://image.tmdb.org/t/p/original${w.logo_path}`}
@@ -141,14 +142,14 @@ const MovieDetails = () => {
             ))}
           </div>
         )}
-
 
         {info.watchproviders && info.watchproviders.rent && (
           <div className="flex  gap-x-8 items-center text-white">
             <h1>Available on rent</h1>
 
-            {info.watchproviders.rent.map((w) => (
+            {info.watchproviders.rent.map((w, i) => (
               <img
+                key={i}
                 title={w.provider_name}
                 className="w-[5vh] h-[5vh] rounded-md object-cover"
                 src={`https://image.tmdb.org/t/p/original${w.logo_path}`}
@@ -158,13 +159,13 @@ const MovieDetails = () => {
           </div>
         )}
 
-
         {info.watchproviders && info.watchproviders.buy && (
           <div className="flex  gap-x-8 items-center text-white">
             <h1>Available on buy</h1>
 
-            {info.watchproviders.buy.map((w) => (
+            {info.watchproviders.buy.map((w, i) => (
               <img
+                key={i}
                 title={w.provider_name}
                 className="w-[5vh] h-[5vh] rounded-md object-cover"
                 src={`https://image.tmdb.org/t/p/original${w.logo_path}`}
@@ -175,28 +176,18 @@ const MovieDetails = () => {
         )}
       </div>
 
-
-
-
       {/*Part 4 recommendations movies  */}
-      <hr className="border-t-2 mt-10 mb-8 text-zinc-500"/>
+      <hr className="border-t-2 mt-10 mb-8 text-zinc-500" />
 
-      <h1 className="text-3xl text-white font-bold mb-2 ">Recommendation & Similar Stuff</h1>
+      <h1 className="text-3xl text-white font-bold mb-2 ">
+        Recommendation & Similar Stuff
+      </h1>
 
-
-      <HorizontalCads data={info.recommendations ?  info.recommendations : info.similar}/>
-
+      <HorizontalCads
+        data={info.recommendations ? info.recommendations : info.similar}
+      />
 
       <Outlet />
-
-
-
-
-
-
-
-
-
     </div>
   ) : (
     <Loading />
