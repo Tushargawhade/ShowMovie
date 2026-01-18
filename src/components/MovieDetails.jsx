@@ -39,7 +39,7 @@ const MovieDetails = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="relative w-full h-[170vh] px-[10%]  "
+      className="relative w-full h-[155vh] px-[10%]  "
     >
       {/*Part 1st poster image  */}
       <nav className="w-full h-[10vh] text-zinc-100 flex gap-10 text-2xl items-center">
