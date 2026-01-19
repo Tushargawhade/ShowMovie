@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Dropdown from './Dropdown'
+import notfound from '/notfound.jpg'
+
 
 
 
@@ -16,7 +17,11 @@ const HorizontalCards = ({data}) => {
           
           <Link to={`/${d.media_type}/details/${d.id}`} key={i} className='min-w-[16%] h-[35vh] mr-5  bg-zinc-900 mb-5'>
 
-            <img className='w-full h-[55%] object-cover' src={`https://image.tmdb.org/t/p/original${ d.backdrop_path || d.poster_path}`} alt="" />
+            <img 
+              className='w-full h-[55%] object-cover' 
+              src={  d.backdrop_path || d.poster_path ? `https://image.tmdb.org/t/p/original${ d.backdrop_path || d.poster_path}` : notfound} 
+
+              alt="" />
 
 
 
