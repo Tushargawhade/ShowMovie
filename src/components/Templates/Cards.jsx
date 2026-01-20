@@ -5,7 +5,7 @@ import notfound from '/notfound.jpg'
 function Cards({data , title}) {
 
 
-console.log(data);
+// console.log(data);
 
   return (
 
