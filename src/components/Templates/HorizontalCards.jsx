@@ -28,10 +28,11 @@ const HorizontalCards = ({data}) => {
             <div className='text-white h-[45%] p-2  overflow-y-auto'>
 
               <h1 className=' text-xl font-semibold '>
-                {d.original_title || 
-                    d.title || 
-                    d.original_name || 
-                    d.name
+                {   d.title || 
+                    d.name || 
+                    d.original_title || 
+                    d.original_name 
+                 
                 }
               </h1> 
 

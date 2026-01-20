@@ -11,6 +11,7 @@ import TvDetails from "../src/components/TvDetails";
 import PersonDetails from "../src/components/PersonDetail";
 import Trailer from "./components/Templates/Trailer";
 import NotFound from "./components/NotFound";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -31,6 +32,8 @@ const App = () => {
 
         <Route path="/person" element={<People />} />
         <Route path="/person/details/:id" element={<PersonDetails />} />
+
+        <Route path="/about"  element={<About/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

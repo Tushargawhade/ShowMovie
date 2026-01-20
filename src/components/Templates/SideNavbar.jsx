@@ -54,13 +54,10 @@ const SideNavbar = () => {
           Website Information
         </h1>
 
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
+        <Link to={"/about"} className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
           <i className="ri-information-2-fill mr-2"></i> About Us
         </Link>
 
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-4">
-          <i className="ri-phone-fill mr-2"></i> Contact SCSDB
-        </Link>
       </nav>
     </div>
   );

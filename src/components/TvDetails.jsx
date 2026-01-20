@@ -184,11 +184,11 @@ const tvDetails = () => {
        Seasons
       </h1>
 
-      <div  className='w-full flex overflow-y-hidden mb-3 p-3 '>
+      <div   className='w-full flex overflow-y-hidden mb-3 p-3 '>
 
         {info.detail.seasons.length > 0 ? info.detail.seasons.map((s,i)=> (
 
-          <div className="min-w-[16%] h-[40vh] mr-5 flex flex-col mb-5">
+          <Link  className="min-w-[16%] h-[40vh] mr-5 flex flex-col mb-5">
 
            <img 
               className='shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[36vh] object-fit' 
@@ -200,7 +200,7 @@ const tvDetails = () => {
               {s.name}         
             </h1>
           
-          </div>
+          </Link>
 
         )) :  <h1 className='text-3xl font-black mt-5 text-white text-center '>Nothing to Show</h1> } 
        

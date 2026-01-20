@@ -21,7 +21,7 @@ console.log(data);
 
                 <h1 className='text-zinc-300 font-semibold  text-xl mt-2 '>
 
-                {c.name || c.original_title || c.title || c.original_name  }
+                {c.title || c.name || c.original_title  || c.original_name  }
                     
                 </h1>
 
