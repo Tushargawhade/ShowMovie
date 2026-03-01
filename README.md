@@ -107,9 +107,10 @@ http://localhost:5173
 
 (Or the port shown in the terminal if using Vite.)
 
-###📜 License
+##📜 License
 
 This project was built for practice and learning purposes to strengthen frontend development skills, including React, Redux Toolkit, API integration, and project structuring.
 
-###👨‍💻 Author
+##👨‍💻 Author
+
 Tushar Gawhade
