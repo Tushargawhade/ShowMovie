@@ -75,30 +75,41 @@ ShowMovie/
 ├── package.json
 ├── vite.config.js
 └── README.md
+```
+---
 
 
-⚙️ Installation & Local Setup
+## Installation & Local Setup
 
 Follow these steps to run the project on your local machine:
 
-1️⃣ Clone the Repository
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/Tushargawhade/ShowMovie.git
-2️⃣ Navigate to Project Directory
+```
+### 2️⃣ Navigate to Project Directory
+```bash
 cd ShowMovie
-3️⃣ Install Dependencies
+```
+### 3️⃣ Install Dependencies
+```bash
 npm install
-4️⃣ Start the Development Server
+```
+### 4️⃣ Start the Development Server
+```bash
 npm run dev
+```
 
 After starting the server, open:
-
+```bash
 http://localhost:5173
+```
 
 (Or the port shown in the terminal if using Vite.)
 
-📜 License
+###📜 License
 
 This project was built for practice and learning purposes to strengthen frontend development skills, including React, Redux Toolkit, API integration, and project structuring.
 
-👨‍💻 Author
+###👨‍💻 Author
 Tushar Gawhade
