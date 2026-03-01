@@ -1,187 +1,105 @@
-🎬 SHOWMOVIE
+🎬 ShowMovie
 
-Transforming Media Discovery with Seamless Innovation
+ShowMovie is a modern movie browsing web application that allows users to search and explore movies with a clean, responsive, and user-friendly interface. The project follows a scalable folder structure and reusable component architecture for maintainability and future enhancements.
+
+📌 Project Description
+
+ShowMovie is a movie discovery platform that enables users to:
+
+🎥 Browse trending and popular movies
+
+🔍 Search for movies by title
+
+📄 View detailed information about each movie
+
+📱 Enjoy a fully responsive experience across devices
+
+This project demonstrates modern frontend development practices, API integration, and deployment workflows.
+
+🚀 Live Deployment
+
+🔗 Vercel Deployment:
+https://show-movie-one.vercel.app/
+
+✨ Features
+
+Movie search functionality
+
+Dynamic API data fetching
+
+Clean and modern UI
+
+Reusable components
+
+Fast performance
 
 
-📑 Table of Contents
+🛠️ Tech Stack
 
-Overview
+Vite
 
-Why ShowMovie?
+React.js
 
-Getting Started
-
-Prerequisites
-
-Installation
-
-Usage
-
-Testing
-
-Project Structure
-
-API Configuration
-
-Future Improvements
-
-Credits
-
-Author
-
-📖 Overview
-
-ShowMovie is a modern media discovery web application built with React.
-It allows users to explore movies, TV shows, seasons, people, and detailed information using the TMDB API.
-
-The project focuses on:
-
-Clean UI
-
-Scalable architecture
-
-Real-world API integration
-
-Smooth navigation and performance
-
-❓ Why ShowMovie?
-
-This project demonstrates how to build a production-ready media platform using modern frontend tools.
-
-Core highlights:
-
-⚡ Fast Development Environment
-Built with Vite, enabling instant hot-module replacement.
-
-🧹 Code Quality & Standards
-ESLint enforces clean JavaScript and JSX practices.
-
-🎨 Modern Styling
-Tailwind CSS for responsive, customizable UI.
-
-🧩 Component Modularization
-Reusable components for cards, details, layouts, and navigation.
-
-🔄 State & API Management
-Redux + Axios for predictable data flow and API handling.
-
-🚀 Scalable Architecture
-Easy to extend with new features like search, auth, and watchlists.
-
-🚀 Getting Started
-Prerequisites
-
-Make sure you have the following installed:
+Tailwind CSS
 
 JavaScript (ES6+)
 
-Node.js
+Redux Toolkit
 
-npm (Node Package Manager)
+TMDB API
 
-Installation
+Vercel (Deployment)
 
-Build ShowMovie from source and install dependencies:
+📂 Folder Structure
+ShowMovie/
+│
+├── public/                 # Static assets (images, gifs, logo)
+│
+├── src/
+│   ├── components/         # Reusable UI components
+│   │   ├── Templates/      # Card, Navbar, Trailer, etc.
+│   │   └── Pages (Home, Movie, Trending, etc.)
+│   │
+│   ├── store/              # Redux Toolkit setup
+│   │   ├── actions/        # Async actions (movie, tv, person)
+│   │   ├── reducers/       # Slices (movieSlice, tvSlice, personSlice)
+│   │   └── store.jsx       # Redux store configuration
+│   │
+│   ├── utils/              # Axios configuration & helpers
+│   │
+│   ├── App.jsx             # Main App component
+│   ├── main.jsx            # Entry point
+│   └── index.css           # Global styles
+│
+├── index.html              # Root HTML file (Vite)
+├── package.json
+├── vite.config.js
+└── README.md
 
-Clone the repository
+⚙️ Installation & Local Setup
 
-git clone https://github.com/Tushargawhade/ShowMovie
+Follow these steps to run the project on your local machine:
 
-
-Navigate to the project directory
-
+1️⃣ Clone the Repository
+git clone https://github.com/Tushargawhade/ShowMovie.git
+2️⃣ Navigate to Project Directory
 cd ShowMovie
-
-
-Install dependencies
-
+3️⃣ Install Dependencies
 npm install
-
-▶️ Usage
-
-Run the development server:
-
+4️⃣ Start the Development Server
 npm run dev
 
-
-Open your browser and visit:
+After starting the server, open:
 
 http://localhost:5173
 
-🧪 Testing
+(Or the port shown in the terminal if using Vite.)
 
-Currently, this project does not include automated tests.
-Testing support can be added in future using frameworks like Jest or Vitest.
+📜 License
 
-npm test
-
-🗂️ Project Structure
-src/
- ├─ components/
- │   ├─ Templates/
- │   ├─ partials/
- │   ├─ MovieDetails.jsx
- │   ├─ TvDetails.jsx
- │   ├─ PersonDetail.jsx
- │   └─ SeasonDetails.jsx
- ├─ store/
- │   ├─ actions/
- │   ├─ reducers/
- ├─ utils/
- │   └─ axios.js
- ├─ App.jsx
- └─ main.jsx
-
-🔑 API Configuration
-
-ShowMovie uses The Movie Database (TMDB) API.
-
-Steps:
-
-Create an account at:
-👉 https://www.themoviedb.org/
-
-Generate a Read Access Token (v4 auth)
-
-Configure Axios:
-
-import axios from "axios";
-
-const instance = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
-  headers: {
-    Authorization: `Bearer YOUR_TMDB_ACCESS_TOKEN`,
-  },
-  params: {
-    language: "en-US",
-  },
-});
-
-export default instance;
-
-
-⚠️ Replace YOUR_TMDB_ACCESS_TOKEN with your actual token.
-
-🔮 Future Improvements
-
-❤️ Watchlist & favorites
-
-🔐 Authentication
-
-🎬 Episode detail pages
-
-🌐 Multi-language support
-
-📱 Mobile UI optimizations
-
-🙌 Credits
-
-Data provided by The Movie Database (TMDB)
-
-This product uses the TMDB API but is not endorsed or certified by TMDB.
+This project was built for practice and learning purposes to strengthen frontend development skills, including React, Redux Toolkit, API integration, and project structuring.
 
 👨‍💻 Author
 
 Tushar Gawhade
-
 GitHub: https://github.com/Tushargawhade
